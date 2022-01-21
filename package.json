@@ -1,0 +1,28 @@
+{
+  "name": "lexiconsokoban",
+  "version": "1.0.0",
+  "description": "Simple Sokoban game ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vingnir/LexiconSokoban.git"
+  },
+  "keywords": [
+    "Sokoban",
+    "Lexicon",
+    "JavaScript"
+  ],
+  "author": "Johan Ivarsson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vingnir/LexiconSokoban/issues"
+  },
+  "homepage": "https://github.com/vingnir/LexiconSokoban#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jsdoc": "^3.6.7"
+  }
+}

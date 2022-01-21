@@ -17,16 +17,44 @@
 /* Main */
 #playground{
 background-color: darkcyan;
-width: 250px;
-height: 250px;
+max-width: 400px;
+max-height: 475px;
+
+
+
 }
 
 .block{
     width: 23px;
     height: 23px;
     border: 1px solid black;
+    float: left;
+}
+
+.block{
+    width: 23px;
+    height: 23px;
+    border: 1px solid black;
+    float: left;
 }
 
 .player{
     background-color: purple;
+}
+
+/* Map */
+.W{
+    width: 23px;
+    height: 23px;
+    border: 1px solid black;
+    background-color: saddlebrown;
+    float: left;
+}
+
+.P{
+    background-color: salmon;
+}
+
+.G{
+    background-color: skyblue;
 }
