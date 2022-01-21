@@ -1,0 +1,32 @@
+/*
+* Name: Lexicon Sokoban
+* Description: CSS/JS training project
+* Author: Johan Ivarsson
+* Author URI: https://github.com/vingnir
+* Copyright 2022-01 Johan Ivarsson
+* Tags: Lexicon, CSS, JavaScript
+***************************************
+* TABLE OF CONTENTS
+* HEADING -  navigation
+* MAINCONTENT - 
+* FOOTER - Copyright
+***/
+
+
+
+/* Main */
+#playground{
+background-color: darkcyan;
+width: 250px;
+height: 250px;
+}
+
+.block{
+    width: 23px;
+    height: 23px;
+    border: 1px solid black;
+}
+
+.player{
+    background-color: purple;
+}
