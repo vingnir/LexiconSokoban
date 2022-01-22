@@ -1,0 +1,69 @@
+$line-color: hsla(205,80%,40%,1);
+
+html {
+  font-size: .8em;
+  
+  background-color: #222;
+  background-image:
+    // <> 
+    linear-gradient(
+        25deg,
+        transparent 65%,
+        $line-color,
+        transparent 70%
+        ),
+    linear-gradient(
+        -25deg,
+        transparent 65%,
+        $line-color,
+        transparent 70%
+        ),
+    linear-gradient(
+        -25deg,
+        transparent 30%,
+        $line-color,
+        transparent 35%
+        ),
+    linear-gradient(
+        25deg,
+        transparent 30%,
+        $line-color,
+        transparent 35%
+        ),    
+    
+    // ◊
+    linear-gradient(
+        65deg,
+        transparent 65%,
+        $line-color,
+        transparent 70%
+        ),
+    linear-gradient(
+        -65deg,
+        transparent 65%,
+        $line-color,
+        transparent 70%
+        ),
+    linear-gradient(
+        -65deg,
+        transparent 30%,
+        $line-color,
+        transparent 35%
+        ),
+    linear-gradient(
+        65deg,
+        transparent 30%,
+        $line-color,
+        transparent 35%
+        );
+  background-size: 
+    5em 2em,
+    5em 2em,
+    5em 2em,
+    5em 2em,
+    
+    2em 5em,
+    2em 5em,
+    2em 5em,
+    2em 5em;
+  }
