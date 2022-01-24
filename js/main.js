@@ -4,7 +4,7 @@
  */
 
 const playground = document.getElementById("playground");
-
+const successBlocks = 6;
 document.body.addEventListener("keyup", keyPress);
 
 var player = {
@@ -76,10 +76,8 @@ function keyPress(e) {
 function movePlayer(x, y) {
   var newY = player.y + y;
   var newX = player.x + x;
-  
   var playerElement = document.getElementById("x" + player.x + "y" + player.y);
   var destination = document.getElementById("x" + newX + "y" + newY);
- 
  if (
    !destination.classList.contains("W") &&
    !destination.classList.contains("B")
@@ -95,16 +93,17 @@ function movePlayer(x, y) {
      player.x = newX;
      player.y = newY;
      moveBox(directionX, directionY);
- } else return;
-  
-
-  console.log("x" + x + " " + "y" + y);
+     var score = document.getElementsByClassName("G-success");
+     if (score.length == successBlocks) {
+       alert("Hurray! You won the game!");
+     }   
+ }
+ else return;
 }
 
 function isMovable(x,y){
     box.y = y + directionY;
-    box.x = x + directionX;
-    
+    box.x = x + directionX;   
     var boxDestination = document.getElementById("x" + box.x + "y" + box.y);
     if (
       boxDestination.classList.contains("W") ||
@@ -127,5 +126,7 @@ if (boxDestination.classList.contains("G")) {
 boxElement.classList.remove("B");
 boxDestination.classList.add("B");
 }
+
+
 initializeMap();
 
