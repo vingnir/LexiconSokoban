@@ -4,7 +4,7 @@
  */
 
 const playground = document.getElementById("playground");
-const successBlocks = 6;
+const successBlocks = 1;
 document.body.addEventListener("keyup", keyPress);
 var directionX;
 var directionY;
@@ -114,8 +114,10 @@ function moveBox(x, y) {
   boxElement.classList.remove("B");
   boxDestination.classList.add("B");
   if (score.length == successBlocks) {
-    alert("Hurray! You won the game!");
-    window.location.reload();
+    setTimeout(function () {
+        alert("Hurray! You won the game!");
+         window.location.reload();
+    }, 500);  
   }
 }
 
