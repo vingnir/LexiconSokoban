@@ -108,20 +108,7 @@ if (mapPos === "W") {
 }
 
 function moveBox(x, y) {
-  /*
-if(x !=0)
-{
-box.x = player.x + 1;
-box.y = player.y;
-}
-else
-{
-box.x = player.x;
-box.y = player.y + 1;
-}
-console.log("boxX" + box.x);
-console.log("boxY" + box.y);
-*/
+ 
 var newY = player.y + y;
 var newX = player.x + x;
 var boxElement = document.getElementById("x" + player.x + "y" + player.y);
