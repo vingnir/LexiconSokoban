@@ -12,10 +12,11 @@ var player = {
   y: -1,
 };
 
-var box = {
+var box= {
   x: -1,
   y: -1,
 };
+
 
 
 /* Render Map*/     
@@ -36,6 +37,7 @@ function initializeMap() {
         player.x = row;
         player.y = col;
       }
+      
       playground.appendChild(element);
     }
   }
@@ -70,70 +72,60 @@ function keyPress(e) {
   }
 }
 
-function isBox(){
-
-}
 
 function movePlayer(x, y) {
   var newY = player.y + y;
   var newX = player.x + x;
-  var mapPos = tileMap01.mapGrid[newY][newX][0];
   
-if (mapPos === "W") {
-  alert("wall");
-  return;
-} else if (mapPos === "B") {
-  alert("chicken");
-  
-} else if (mapPos === "G") {
-  alert("Goal");
-} else {
-  console.log("testar");
-}
   var playerElement = document.getElementById("x" + player.x + "y" + player.y);
   var destination = document.getElementById("x" + newX + "y" + newY);
-  
-  playerElement.classList.remove("player");
-  destination.classList.add("player");
-  player.x = newX;
-  player.y = newY;
-  if (mapPos === "B") {
-    alert("box");
-    moveBox(directionX, directionY);
-  }
+ 
+ if (
+   !destination.classList.contains("W") &&
+   !destination.classList.contains("B")
+ ) {
+   playerElement.classList.remove("player");
+   destination.classList.add("player");
+   player.x = newX;
+   player.y = newY;
+ } 
+ else if (destination.classList.contains("B") && isMovable(newX, newY)) { 
+     playerElement.classList.remove("player");
+     destination.classList.add("player");
+     player.x = newX;
+     player.y = newY;
+     moveBox(directionX, directionY);
+ } else return;
   
 
-  
   console.log("x" + x + " " + "y" + y);
 }
 
-function moveBox(x, y) {
- 
+function isMovable(x,y){
+    box.y = y + directionY;
+    box.x = x + directionX;
+    
+    var boxDestination = document.getElementById("x" + box.x + "y" + box.y);
+    if (
+      boxDestination.classList.contains("W") ||
+      boxDestination.classList.contains("B")
+    ) {
+      return false;
+    }
+    else return true;
+}
+function moveBox(x, y) { 
 var newY = player.y + y;
 var newX = player.x + x;
 var boxElement = document.getElementById("x" + player.x + "y" + player.y);
-//console.log("boxelement" + boxElement);
-//console.log("boxDest" + boxDestination);
-
 var boxDestination = document.getElementById("x" + newX + "y" + newY);
 
+if (boxDestination.classList.contains("G")) {
+  boxElement.classList.remove("G-success");
+  boxDestination.classList.add("G-success");
+} 
 boxElement.classList.remove("B");
 boxDestination.classList.add("B");
-
 }
-
 initializeMap();
 
-/*
-  if (newX >= 19 || newY >= 16 || newX <= -1 || newY <= -1) {
-    console.log("out of bounds");
-    return;
-  }
-
-if (tileMap01.mapGrid[newY-1][row][0] !== "W")
-
-  */
-
-//var isWalkableBlock = tileMap01.mapGrid[newY - 1][newX-1][0];
-//console.log(isWalkableBlock);
-// destination.style.backgroundColor = "white";
